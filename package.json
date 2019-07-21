@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
     "eslint": "^6.1.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
@@ -14,5 +16,9 @@
   "scripts": {
     "build": "tsc",
     "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
