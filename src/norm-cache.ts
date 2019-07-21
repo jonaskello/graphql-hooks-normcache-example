@@ -17,16 +17,12 @@ export function normCache(getObjectId: GetObjectId): Cache {
         keyObject.operation.variables,
         cache
       );
-      console.log("denormResult", denormResult);
-      console.log("denormResult.data as object", denormResult.data as object);
-      //   return denormResult.data as object;
-      if (!denormResult.data) {
-        return undefined as any;
-      }
-      return { data: denormResult.data, error: false };
+      return (denormResult.data && {
+        data: denormResult.data,
+        error: false
+      }) as any;
     },
     set(keyObject, data) {
-      console.log("CACHE:set data", data);
       const normMap = normalize(
         parse(keyObject.operation.query),
         keyObject.operation.variables,
@@ -36,7 +32,7 @@ export function normCache(getObjectId: GetObjectId): Cache {
       cache = merge(cache, normMap);
     },
     delete(_keyObject) {
-      // Do nothing
+      // Do nothing?
     },
     clear() {
       cache = {};

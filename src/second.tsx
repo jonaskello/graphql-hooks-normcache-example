@@ -22,9 +22,5 @@ export function Second() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Something Bad Happened</div>;
 
-  console.log("loading in componnet", loading);
-  console.log("error in componnet", error);
-  console.log("data in componnet", data);
-
   return <ul>{data.country.name}</ul>;
 }

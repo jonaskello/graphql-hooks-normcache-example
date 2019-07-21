@@ -9,10 +9,6 @@ const client = new GraphQLClient({
 });
 
 function getObjectId(obj: any) {
-  console.log("obj", obj);
-  if (!obj) {
-    return undefined;
-  }
   return obj.code && obj.__typename && `${obj.__typename}:${obj.code}`;
 }
 
