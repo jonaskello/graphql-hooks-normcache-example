@@ -2,8 +2,8 @@ import React from "react";
 import { useQuery } from "./graphql-hooks-wrappers";
 import gql from "graphql-tag";
 
-const firstQuery = gql`
-  query GetCountry($code: String!) {
+const secondQuery = gql`
+  query GetCountry2($code: String!) {
     country(code: $code) {
       __typename
       code
@@ -13,7 +13,7 @@ const firstQuery = gql`
 `;
 
 export function Second() {
-  const { loading, error, data } = useQuery(firstQuery, {
+  const { loading, error, data } = useQuery(secondQuery, {
     variables: {
       code: "SE"
     }
@@ -21,6 +21,10 @@ export function Second() {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Something Bad Happened</div>;
+
+  console.log("loading in componnet", loading);
+  console.log("error in componnet", error);
+  console.log("data in componnet", data);
 
   return <ul>{data.country.name}</ul>;
 }
