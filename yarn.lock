@@ -32,6 +32,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/graphql@^14.2.2":
+  version "14.2.2"
+  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-14.2.2.tgz#10f197e6f8559c11b16d630c5e9c10c3c8e61c5e"
+  integrity sha512-okXbUmdZFMO3AYBEJCcpJFPFDkKmIiZZBqWD5TmPtAv+GHfjD2qLZEI0PvZ8IWMU4ozoK2HV2lDxWjw4LbVlnw==
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -1792,6 +1797,11 @@ graphql-hooks@^3.6.0:
   integrity sha512-POTpY4Y7rniXtd1lAnii8BRtmKRHlz1VS6J7es+z+oSRCR7usz+VxJl1t7lYhDt9FJOhU9ZWPEVPhCYLK6MCGQ==
   dependencies:
     extract-files "^5.0.1"
+
+graphql-norm@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/graphql-norm/-/graphql-norm-1.0.0.tgz#497f4cec480d2db9c4b93ca2f1bc431eed881366"
+  integrity sha512-bvzQcd7ZLjXYB2ZO9ty6cxyrXwxZ5kaVUiZeU/62fvw19gQvwo+TFQZbep6YaQaep8igp3rW3FGGV27CFfASXw==
 
 graphql-tag@^2.10.1:
   version "2.10.1"

@@ -1,26 +1,46 @@
-import { CacheKeyObject, Cache } from "graphql-hooks";
+import { Cache } from "graphql-hooks";
+import {
+  normalize,
+  merge,
+  denormalize,
+  NormMap,
+  GetObjectId
+} from "graphql-norm";
+import { parse } from "graphql";
 
-export const normCache: Cache = {
-  get: _keyObject => {
-    console.log("CACHE: get", _keyObject);
-    return undefined as any;
-  },
-  set: (_keyObject: CacheKeyObject, _data: object) => {
-    console.log("CACHE: set _keyObject", _keyObject);
-    console.log("CACHE: set _data", _data);
-  },
-  delete: (_keyObject: CacheKeyObject) => {
-    console.log("CACHE: delete");
-  },
-  clear: () => {
-    console.log("CACHE: clear");
-  },
-  keys: () => {
-    console.log("CACHE: keys");
-    return [];
-  },
-  getInitialState: () => {
-    console.log("CACHE: keys");
-    return [];
-  }
-};
+export function normCache(getObjectId: GetObjectId): Cache {
+  let cache: NormMap = {};
+  return {
+    get(keyObject) {
+      const denormResult = denormalize(
+        parse(keyObject.operation.query),
+        keyObject.operation.variables,
+        cache
+      );
+      console.log("denormResult", denormResult);
+      return denormResult.data as object;
+    },
+    set(keyObject, data) {
+      console.log("data", data);
+      const normMap = normalize(
+        parse(keyObject.operation.query),
+        keyObject.operation.variables,
+        (data as any).data,
+        getObjectId
+      );
+      cache = merge(cache, normMap);
+    },
+    delete(_keyObject) {
+      // Do nothing
+    },
+    clear() {
+      cache = {};
+    },
+    keys() {
+      return Object.keys(cache);
+    },
+    getInitialState() {
+      return cache;
+    }
+  };
+}

@@ -5,8 +5,16 @@ import { normCache } from "./norm-cache";
 
 const client = new GraphQLClient({
   url: "https://countries.trevorblades.com/graphql",
-  cache: normCache
+  cache: normCache(getObjectId)
 });
+
+function getObjectId(obj: any) {
+  console.log("obj", obj);
+  if (!obj) {
+    return undefined;
+  }
+  return obj.code && obj.__typename && `${obj.__typename}:${obj.code}`;
+}
 
 export function Root() {
   return (
