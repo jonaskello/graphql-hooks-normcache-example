@@ -33,8 +33,8 @@ const myCache: Cache = {
 };
 
 const client = new GraphQLClient({
-  url: "https://countries.trevorblades.com/graphql",
-  cache: myCache
+  url: "https://countries.trevorblades.com/graphql"
+  // cache: myCache
 });
 
 export function Root() {
