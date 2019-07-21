@@ -1463,6 +1463,11 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+extract-files@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/extract-files/-/extract-files-5.0.1.tgz#c9492a8410be643e260a376f0151361993d5f659"
+  integrity sha512-qRW6y9eKF0VbCyOoOEtFhzJ3uykAw8GKwQVXyAIqwocyEWW4m+v+evec34RwtUkkxxHh7NKBLJ6AnXM8W4dH5w==
+
 fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
@@ -1780,6 +1785,13 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.0.tgz#8d8fdc73977cb04104721cb53666c1ca64cd328b"
   integrity sha512-jpSvDPV4Cq/bgtpndIWbI5hmYxhQGHPC4d4cqBPb4DLniCfhJokdXhwhaDuLBGLQdvvRum/UiX6ECVIPvDXqdg==
+
+graphql-hooks@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/graphql-hooks/-/graphql-hooks-3.6.0.tgz#a3dc28d25ffd39ea0282d73e9d73d6e98c7e19c4"
+  integrity sha512-POTpY4Y7rniXtd1lAnii8BRtmKRHlz1VS6J7es+z+oSRCR7usz+VxJl1t7lYhDt9FJOhU9ZWPEVPhCYLK6MCGQ==
+  dependencies:
+    extract-files "^5.0.1"
 
 handle-thing@^2.0.0:
   version "2.0.0"
