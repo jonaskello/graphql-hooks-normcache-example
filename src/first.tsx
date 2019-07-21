@@ -38,7 +38,13 @@ export function First() {
     <div>
       <ul>{data.country.name}</ul>
       {!clicked ? (
-        <button onClick={_ => setClicked(true)}>Second query</button>
+        <div>
+          <p>
+            The second query will be loaded without fetching from the server,
+            check network tab in devtools.
+          </p>
+          <button onClick={_ => setClicked(true)}>Load second query</button>
+        </div>
       ) : (
         <div>
           <Second />

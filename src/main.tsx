@@ -5,9 +5,14 @@ export function Main() {
   const [clicked, setClicked] = useState(false);
   return (
     <div>
-      <p>{clicked.toString()}</p>
       {!clicked ? (
-        <button onClick={_ => setClicked(true)}>First query</button>
+        <div>
+          <p>
+            The first query will be fetched from the server, check network tab
+            in devtools.
+          </p>
+          <button onClick={_ => setClicked(true)}>First query</button>
+        </div>
       ) : (
         <div>
           <First />

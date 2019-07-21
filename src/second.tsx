@@ -8,16 +8,6 @@ const firstQuery = gql`
       __typename
       code
       name
-      continent {
-        __typename
-        code
-        name
-      }
-      languages {
-        __typename
-        code
-        name
-      }
     }
   }
 `;
