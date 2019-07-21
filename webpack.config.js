@@ -12,7 +12,14 @@ module.exports = {
     publicPath: "/dist/"
   },
   module: {
-    rules: [{ test: /\.tsx?$/, loader: "ts-loader" }]
+    rules: [
+      { test: /\.tsx?$/, loader: "ts-loader" },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/auto"
+      }
+    ]
   },
   stats: "errors-only",
   devServer: {

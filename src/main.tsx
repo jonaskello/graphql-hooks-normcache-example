@@ -1,17 +1,29 @@
 import React from "react";
-import { useQuery } from "graphql-hooks";
+import { useQuery } from "./graphql-hooks-wrappers";
+import gql from "graphql-tag";
 
-const query = `
+const firstQuery = gql`
   query GetCountry($code: String!) {
     country(code: $code) {
-      __typename code name
-      continent {__typename code name}
-      languages {__typename code name}
+      __typename
+      code
+      name
+      continent {
+        __typename
+        code
+        name
+      }
+      languages {
+        __typename
+        code
+        name
+      }
     }
-  }`;
+  }
+`;
 
 export function Main() {
-  const { loading, error, data } = useQuery(query, {
+  const { loading, error, data } = useQuery(firstQuery, {
     variables: {
       code: "SE"
     }

@@ -18,7 +18,9 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "graphql": "^14.4.2",
     "graphql-hooks": "^3.6.0",
+    "graphql-tag": "^2.10.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
