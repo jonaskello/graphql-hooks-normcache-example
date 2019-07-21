@@ -1,36 +1,18 @@
-import React from "react";
-import { useQuery } from "./graphql-hooks-wrappers";
-import gql from "graphql-tag";
-
-const firstQuery = gql`
-  query GetCountry($code: String!) {
-    country(code: $code) {
-      __typename
-      code
-      name
-      continent {
-        __typename
-        code
-        name
-      }
-      languages {
-        __typename
-        code
-        name
-      }
-    }
-  }
-`;
+import React, { useState } from "react";
+import { First } from "./first";
 
 export function Main() {
-  const { loading, error, data } = useQuery(firstQuery, {
-    variables: {
-      code: "SE"
-    }
-  });
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Something Bad Happened</div>;
-
-  return <ul>{data.country.name}</ul>;
+  const [clicked, setClicked] = useState(false);
+  return (
+    <div>
+      <p>{clicked.toString()}</p>
+      {!clicked ? (
+        <button onClick={_ => setClicked(true)}>First query</button>
+      ) : (
+        <div>
+          <First />
+        </div>
+      )}
+    </div>
+  );
 }
