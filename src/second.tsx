@@ -1,5 +1,6 @@
 import React from "react";
-import { useQuery } from "./graphql-hooks-wrappers";
+import { print } from "graphql";
+import { useQuery } from "graphql-hooks";
 import gql from "graphql-tag";
 
 const secondQuery = gql`
@@ -13,7 +14,7 @@ const secondQuery = gql`
 `;
 
 export function Second() {
-  const { loading, error, data } = useQuery(secondQuery, {
+  const { loading, error, data } = useQuery(print(secondQuery), {
     variables: {
       code: "SE"
     }
