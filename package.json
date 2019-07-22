@@ -1,5 +1,6 @@
 {
   "name": "graphql-hooks-normcache-example",
+  "description": "Using graphql-hooks with graphql-norm to create a graphql client with normalized cache",
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
