@@ -1,6 +1,6 @@
 # graphql-hooks-normcache-example
 
-Using graphql-hooks with graphql-norm to create a graphql client with normalized cache",
+Using graphql-hooks with graphql-norm to create a graphql client with normalized cache.
 
 ## Description
 
