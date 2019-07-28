@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { print } from "graphql";
 import { useQuery } from "graphql-hooks";
 import { Second } from "./second";
+import { cache } from "./norm-cache";
 
 const firstQuery = gql`
   query GetCountry($code: String!) {
@@ -34,6 +35,8 @@ export function First() {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Something Bad Happened</div>;
+
+  console.log("The cache is now: ", cache);
 
   return (
     <div>

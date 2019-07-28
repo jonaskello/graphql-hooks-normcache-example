@@ -8,8 +8,10 @@ import {
 } from "graphql-norm";
 import { parse } from "graphql";
 
+export let cache: NormMap = {};
+
 export function normCache(getObjectId: GetObjectId): Cache {
-  let cache: NormMap = {};
+  // let cache: NormMap = {};
   return {
     get(keyObject) {
       const denormResult = denormalize(
